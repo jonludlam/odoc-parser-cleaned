@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *)
 
-val read_interface: Root.t -> string -> Typedtree.signature ->
+val read_interface: Model.Root.t -> string -> Typedtree.signature ->
   Paths.Identifier.module_ *
   Model.Documentation.t *
   Model.Signature.t
