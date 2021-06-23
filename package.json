@@ -1,56 +1,21 @@
 {
-  "name": "odoc",
-  "version": "1.5.0",
-  "description": "The OCaml/Reason Documentation Generator",
-  "repository": "https://github.com/ocaml/odoc",
+  "name": "odoc-parser",
+  "version": "2.0.0",
+  "description": "A parser for odoc markup",
+  "repository": "https://github.com/ocaml-doc/odoc-parser",
   "authors": [
-    "Thomas Refis <trefis@janestreet.com>",
-    "David Sheets <sheets@alum.mit.edu>",
-    "Leo White <leo@lpw25.net>"
+    "Anton Bachin <antonbachin@yahoo.com>"
   ],
   "esy": {
-    "build": "dune build @install",
-    "install": [
-      "dune install --prefix=#{self.install}"
-    ],
-    "release": {
-      "releasedBinaries": [
-        "odoc"
-      ],
-      "deleteFromBinaryRelease": [
-        "alcotest",
-        "bisect_ppx",
-        "js-build-tools",
-        "markup",
-        "oasis",
-        "ocaml-*",
-        "ocamlfind",
-        "sexplib0"
-      ]
-    },
+    "build": "dune build -p odoc-parser",
     "buildsInSource": "_build"
   },
   "dependencies": {
-    "@opam/alcotest": "^0.8.5",
     "@opam/astring": "^0.8.3",
-    "@opam/bisect_ppx": "2.5.0",
-    "@opam/cmdliner": "*",
-    "@opam/cppo": "*",
     "@opam/dune": "^2.8.5",
-    "@opam/fpath": "*",
-    "@opam/markup": "*",
-    "@opam/ocamlfind": "*",
     "@opam/result": "*",
-    "@opam/sexplib0": "*",
-    "@opam/tyxml": "^4.3.0",
     "@opam/ppx_expect": "*",
-    "ocaml": "<4.12.0"
-  },
-  "resolutions": {
-    "@opam/markup": "aantron/markup.ml:markup.opam#9f8e77"
-  },
-  "devDependencies": {
-    "@opam/merlin": "^3.0.3"
+    "ocaml": "^4.02.3"
   },
   "license": "ISC",
   "private": false
