@@ -78,4 +78,4 @@ jobs:
         run: esy install --verbose
 
       - name: Build odoc
-        run: esy x dune runtest
+        run: esy build dune runtest
