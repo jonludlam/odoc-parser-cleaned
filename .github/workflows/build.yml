@@ -31,11 +31,9 @@ jobs:
       - name: Setup OCaml ${{ matrix.ocaml-version }}
         uses: ocaml/setup-ocaml@v2
         with:
-          # Do not pin odoc to not break Mdx installation
-          opam-pin: false
           ocaml-version: ${{ matrix.ocaml-version }}
           opam-local-packages: |
-            odoc.opam
+            odoc-parser.opam
 
       - name: Install dependencies
         run: opam install -y --deps-only -t ./odoc-parser.opam
@@ -77,5 +75,5 @@ jobs:
       - name: Install dependencies # Solve every time (fast)
         run: esy install --verbose
 
-      - name: Build odoc
-        run: esy build dune runtest
+      - name: Build odoc-parser and run tests
+        run: esy dune runtest
